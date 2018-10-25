@@ -22,12 +22,12 @@ public class SysUserServiceImpl implements SysUserService {
         if (sysUser != null) {
             //判断密码是否正确
             if (loginUser.getPassword().equals(sysUser.getPassword())) {
-                return new ResponseUtil(0, "login success", sysUser);
+                return new ResponseUtil(0, "登陆成功", sysUser);
             } else {
-                return new ResponseUtil(0, "password wrong");
+                return new ResponseUtil(0, "密码错误");
             }
         } else {
-            return new ResponseUtil(0, "email wrong");
+            return new ResponseUtil(0, "账号错误");
         }
     }
 
