@@ -5,10 +5,8 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 /**
  * SysUser Entity Class
@@ -27,6 +25,11 @@ public class SysUser {
     @Column(nullable = false)
     private String email;
     @Column(nullable = false)
+
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id")
+    private List<Article> articles;
+
     private String password;
     private String nickname;
     private String avatar;

@@ -25,4 +25,5 @@ public class SysUserController {
         return new ResponseUtil(0, "get hot users!", sysUserService.getHotUsers());
     }
 
+
 }
